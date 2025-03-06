@@ -1,0 +1,43 @@
+From 6c4e62b0bf4654a4e59dd22b2e108c288686e3ca Mon Sep 17 00:00:00 2001
+From: zsz <shzzhang@stu.xidian.edu.cn>
+Date: Tue, 10 Sep 2024 15:19:58 +0800
+Subject: [PATCH] cancel initialization of static global variables
+
+---
+ src/draco/io/stdio_file_reader.cc | 4 ++--
+ src/draco/io/stdio_file_writer.cc | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/draco/io/stdio_file_reader.cc b/src/draco/io/stdio_file_reader.cc
+index a99c96f..c10b1e7 100644
+--- a/src/draco/io/stdio_file_reader.cc
++++ b/src/draco/io/stdio_file_reader.cc
+@@ -21,8 +21,8 @@ namespace draco {
+             error_string);                                             \
+   } while (false)
+ 
+-bool StdioFileReader::registered_in_factory_ =
+-    FileReaderFactory::RegisterReader(StdioFileReader::Open);
++//bool StdioFileReader::registered_in_factory_ =
++//    FileReaderFactory::RegisterReader(StdioFileReader::Open);
+ 
+ StdioFileReader::~StdioFileReader() { fclose(file_); }
+ 
+diff --git a/src/draco/io/stdio_file_writer.cc b/src/draco/io/stdio_file_writer.cc
+index 2467d07..ecefb57 100644
+--- a/src/draco/io/stdio_file_writer.cc
++++ b/src/draco/io/stdio_file_writer.cc
+@@ -18,8 +18,8 @@ namespace draco {
+             error_string);                                             \
+   } while (false)
+ 
+-bool StdioFileWriter::registered_in_factory_ =
+-    FileWriterFactory::RegisterWriter(StdioFileWriter::Open);
++//bool StdioFileWriter::registered_in_factory_ =
++//    FileWriterFactory::RegisterWriter(StdioFileWriter::Open);
+ 
+ StdioFileWriter::~StdioFileWriter() { fclose(file_); }
+ 
+-- 
+2.34.1.windows.1
+
