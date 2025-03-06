@@ -1,6 +1,6 @@
 set( DIR ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/draco )
 if( NOT EXISTS ${DIR}/CMakeLists.txt )
-  execute_process( COMMAND git clone https://github.com/google/draco.git WORKING_DIRECTORY ${DIR} RESULT_VARIABLE ret )
+  execute_process( COMMAND git clone https://github.com/google/draco.git WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/ RESULT_VARIABLE ret )
 endif()
 if( EXISTS ${DIR}/CMakeLists.txt )
   if( NOT EXISTS ${DIR}/PATCHED )  
