@@ -75,6 +75,6 @@ Use negative quantization values to skip the specified attribute
   # example
   -iMesh D:/airplane.obj -o D:/airplane.bin
   
-  -iMesh D:/airplane.obj -iMap D:/airplane.jpg -hpm_cfg D:/MCEMv0.1/dependencies/hpm/cfg/encode_AI.cfg -hpm_q 63 -hpm_w 1024 -hpm_h 1024 -o D:/airplane.bin
+  -iMesh D:/airplane.obj -iMap D:/airplane.jpg -hpm_cfg D:/MCEMv0.1/dependencies/hpm-HPM-15.0/cfg/encode_AI.cfg -hpm_q 63 -hpm_w 1024 -hpm_h 1024 -o D:/airplane.bin
 
   -iMesh D:/bag.ply -o D:/bag.bin
